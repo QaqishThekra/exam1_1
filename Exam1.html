@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>Account Setting</title>
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript">
+            function page1(){
+                var v1=document.getElementById("WishList")
+                var v2=document.getElementById("NewWish")
+                v1.style.display="none";
+                v2.style.display="block";
+            }
+            function page2(){
+                var v1=document.getElementById("WishList")
+                var v2=document.getElementById("NewWish")
+                v1.style.display="block";
+                v2.style.display="none";
+            }
+            function change_img(imgg){
+                imgg.setAttribute("src","emoji-smile.svg")
+            }
+            function add(){
+                debugger;
+                var v1=document.getElementById("WishList")
+                var v2=document.createElement("div");
+                v1.appendChild(v2);
+                v2.setAttribute("class","ContentRow");
+                var v3=document.createElement("div");
+                v3.setAttribute("class","Row")
+                v2.appendChild(v3);
+                var v4=document.createElement("div");
+                v4.setAttribute("class","TasksBox")
+                v3.appendChild(v4);
+                var v5=document.createElement("span");
+                v5.setAttribute("class","WishElement");
+                v4.appendChild(v5);
+                var v8=document.getElementById("txtNewWish").value
+                v5.innerText=v8
+                var v6=document.createElement("img");
+                v6.setAttribute("src","emoji-neutral.svg")
+                v6.setAttribute("class","iconstyle")
+                v6.setAttribute("onclick","change_img(this)")
+                v4.appendChild(v6);   
+            }
+        </script>
+    </head>
+    <body>
+<div class="ContentBox">
+<div class="Menu">
+<div class="MenuItems" id="Menu_NewWish" >
+    <span class="MenuText" onclick="page1()">New Wish</span>
+</div>
+<div class="MenuItems" id="Menu_WishList" >
+    <span class="MenuText" onclick="page2()">WishList</span>
+</div>
+</div>
+<div class="Content" >
+
+    <div id="NewWish" class="ContentDev">
+
+
+    <div class="ContentRow">
+    <span>
+        New Wish
+    </span>
+    <div class="Row">
+        <input type="text" id="txtNewWish" />
+    </div>
+    <div class="actionBar">
+        <div class="SaveChangesBox">
+            <button class="btn ButtonSubmit" id="btnSave" onclick="add()">Save Changes</button>
+        </div>
+        <div class="CancelBox">
+            <button class="btn btn-default" id="btnCancel" onclick="page2()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div id="WishList" class="ContentDev" style="display: none;">
+
+
+    
+    <div class="ContentRow">
+        <div class="Row">
+            <div class="TasksBox">
+                <span class="WishElement">Travel</span>
+                <img src="emoji-neutral.svg" class="iconstyle" onclick="change_img(this)" />
+            </div>
+        </div>
+    </div>
+    <div class="ContentRow">
+        <div class="Row">
+            <div class="TasksBox">
+                <span class="WishElement">Watch Match Live</span>
+                <img src="emoji-smile.svg" class="iconstyle" onclick="change_img(this)" />
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+</div>
+
+  
+  
+</div>
+</div>
+
+
+    </body>
+</html>
